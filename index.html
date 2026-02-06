@@ -110,6 +110,35 @@
                     "telephone": "+1 (555) 123-4567",
                     "availableLanguage": ["English", "Russian"]
                 }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Главная",
+                        "item": "https://example.com"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Игры",
+                        "item": "https://example.com/games"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": "Индустриальные симуляторы",
+                        "item": "https://example.com/games/industrial-simulators"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 4,
+                        "name": "Factorio",
+                        "item": "https://example.com/games/factorio"
+                    }
+                ]
             }
         ]
     }
@@ -189,6 +218,35 @@
             margin-right: 10px;
             vertical-align: middle;
         }
+        /* Стили для хлебных крошек */
+        .breadcrumbs {
+            background-color: #2a2a2a;
+            padding: 10px 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #444;
+        }
+        .breadcrumbs ul {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .breadcrumbs li {
+            margin: 0 5px 0 0;
+            padding: 0;
+        }
+        .breadcrumbs li:not(:last-child):after {
+            content: "›";
+            margin-left: 10px;
+            color: #00cc66;
+        }
+        .breadcrumbs a {
+            color: #00cc66;
+        }
+        .breadcrumbs a:hover {
+            text-decoration: underline;
+        }
     </style>
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -197,6 +255,15 @@
     <link rel="manifest" href="/site.webmanifest" />
 </head>
 <body>
+    <div class="breadcrumbs">
+        <ul>
+            <li><a href="https://example.com">Главная</a></li>
+            <li><a href="https://example.com/games">Игры</a></li>
+            <li><a href="https://example.com/games/industrial-simulators">Индустриальные симуляторы</a></li>
+            <li>Factorio</li>
+        </ul>
+    </div>
+    
     <div class="container">
         <div class="factorio-header">
             <h1><span class="icon"></span> Factorio <span class="icon"></span></h1>
@@ -255,7 +322,7 @@
 
         <div class="footer">
             <p>© 2023 Краткая википедия о Factorio. Все права на игру принадлежат Wube Software.</p>
-
+            <p>Страница сгенерирована с использованием PHP и HTML в стиле Factorio.</p>
         </div>
     </div>
     
