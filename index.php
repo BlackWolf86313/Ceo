@@ -165,6 +165,53 @@
                         "url": "https://2domains.ru/hosting"
                     }
                 ]
+            },
+            {
+                "@type": "FAQPage",
+                "name": "Часто задаваемые вопросы о Factorio",
+                "description": "Ответы на популярные вопросы об игре Factorio",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Сколько стоит Factorio?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Factorio стоит $20.00 (около 1500 рублей) на официальном сайте. Игра доступна для покупки на Windows, macOS и Linux."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Можно ли играть в Factorio с модами?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Да, Factorio имеет официальную поддержку модов. Вы можете скачать моды через встроенный менеджер модов в игре или на официальном портале mods.factorio.com."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Есть ли в Factorio мультиплеер?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Да, Factorio поддерживает кооперативный режим до 65535 игроков на одном сервере. Вы можете играть с друзьями через интернет или локальную сеть."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Как защититься от битов в Factorio?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Для защиты от битов используйте турели, стены и автоматические оборонительные системы. Рекомендуется окружить базу стенами и разместить лазерные или пулемётные турели с достаточным боезапасом."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Какая цель в Factorio?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Основная цель игры — запустить ракету в космос. Для этого необходимо построить автоматизированный завод, исследовать технологии и наладить производство сложных компонентов."
+                        }
+                    }
+                ]
             }
         ]
     }
@@ -273,6 +320,24 @@
         .breadcrumbs a:hover {
             text-decoration: underline;
         }
+        /* Стили для FAQ блока */
+        .faq-block {
+            background-color: #333;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 4px solid #00cc66;
+        }
+        .faq-question {
+            color: #00cc66;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .faq-answer {
+            margin-left: 20px;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #444;
+        }
     </style>
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -322,6 +387,25 @@
                 <li>Защита от атак местной фауны — битов.</li>
                 <li>Запуск ракеты в космос — финальная цель игры.</li>
             </ul>
+        </div>
+
+        <div class="faq-block">
+            <h2>Часто задаваемые вопросы о Factorio</h2>
+            
+            <div class="faq-question">Сколько стоит Factorio?</div>
+            <div class="faq-answer">Factorio стоит $20.00 (около 1500 рублей) на официальном сайте. Игра доступна для покупки на Windows, macOS и Linux.</div>
+            
+            <div class="faq-question">Можно ли играть в Factorio с модами?</div>
+            <div class="faq-answer">Да, Factorio имеет официальную поддержку модов. Вы можете скачать моды через встроенный менеджер модов в игре или на официальном портале mods.factorio.com.</div>
+            
+            <div class="faq-question">Есть ли в Factorio мультиплеер?</div>
+            <div class="faq-answer">Да, Factorio поддерживает кооперативный режим до 65535 игроков на одном сервере. Вы можете играть с друзьями через интернет или локальную сеть.</div>
+            
+            <div class="faq-question">Как защититься от битов в Factorio?</div>
+            <div class="faq-answer">Для защиты от битов используйте турели, стены и автоматические оборонительные системы. Рекомендуется окружить базу стенами и разместить лазерные или пулемётные турели с достаточным боезапасом.</div>
+            
+            <div class="faq-question">Какая цель в Factorio?</div>
+            <div class="faq-answer">Основная цель игры — запустить ракету в космос. Для этого необходимо построить автоматизированный завод, исследовать технологии и наладить производство сложных компонентов.</div>
         </div>
 
         <div class="content-block">
