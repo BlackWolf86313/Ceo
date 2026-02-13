@@ -13,8 +13,8 @@
     <meta name="robots" content="index, follow">
     <meta property="og:title" content="Factorio | Индустриальная выживалка">
     <meta property="og:description" content="Краткая википедия о Factorio — игре про автоматизацию, ресурсы и выживание на чужой планете.">
-    <meta property="og:image" content="https://example.com/factorio-wiki.jpg">
-    <meta property="og:url" content="https://example.com">
+    <meta property="og:image" content="https://ceo-chi.vercel.app/factorio-wiki.jpg">
+    <meta property="og:url" content="https://ceo-chi.vercel.app">
     <meta property="og:type" content="website">
 
     
@@ -27,17 +27,17 @@
                 "@type": "WebPage",
                 "name": "Factorio | Индустриальная выживалка",
                 "description": "Краткая википедия о Factorio — игре про автоматизацию, ресурсы и выживание на чужой планете.",
-                "url": "https://example.com",
+                "url": "https://ceo-chi.vercel.app",
                 "primaryImageOfPage": {
                     "@type": "ImageObject",
-                    "url": "https://example.com/factorio-wiki.jpg"
+                    "url": "https://ceo-chi.vercel.app/factorio-wiki.jpg"
                 },
                 "datePublished": "2023-01-01",
                 "dateModified": "2023-12-15",
                 "inLanguage": "ru",
                 "potentialAction": {
                     "@type": "ReadAction",
-                    "target": ["https://example.com"]
+                    "target": ["https://ceo-chi.vercel.app"]
                 }
             },
             {
@@ -54,7 +54,7 @@
                     "name": "Factorio Community",
                     "logo": {
                         "@type": "ImageObject",
-                        "url": "https://example.com/logo.png"
+                        "url": "https://ceo-chi.vercel.app/logo.png"
                     }
                 },
                 "datePublished": "2023-01-01",
@@ -92,8 +92,8 @@
             {
                 "@type": "Organization",
                 "name": "Factorio Wiki",
-                "url": "https://example.com",
-                "logo": "https://example.com/logo.png",
+                "url": "https://ceo-chi.vercel.app",
+                "logo": "https://ceo-chi.vercel.app/logo.png",
                 "sameAs": [
                     "https://factorio.com",
                     "https://mods.factorio.com",
@@ -111,7 +111,7 @@
                 "email": "info@factorio-wiki.com",
                 "contactPoint": {
                     "@type": "ContactPoint",
-                    "email": "info@example.com",
+                    "email": "info@ceo-chi.vercel.app",
                     "contactType": "customer service",
                     "telephone": "+1 (555) 123-4567",
                     "availableLanguage": ["English", "Russian"]
@@ -124,26 +124,8 @@
                         "@type": "ListItem",
                         "position": 1,
                         "name": "Главная",
-                        "item": "https://example.com"
-                    },
-                    {
-                        "@type": "ListItem",
-                        "position": 2,
-                        "name": "Игры",
-                        "item": "https://example.com/games"
-                    },
-                    {
-                        "@type": "ListItem",
-                        "position": 3,
-                        "name": "Индустриальные симуляторы",
-                        "item": "https://example.com/games/industrial-simulators"
-                    },
-                    {
-                        "@type": "ListItem",
-                        "position": 4,
-                        "name": "Factorio",
-                        "item": "https://example.com/games/factorio"
-                    }
+                        "item": "https://ceo-chi.vercel.app/"
+                    }                   
                 ]
             },
             {
@@ -156,13 +138,13 @@
                         "@type": "ListItem",
                         "position": 1,
                         "name": "Подбор домена",
-                        "url": "https://2domains.ru/domains"
+                        "url": "https://ceo-chi.vercel.app"
                     },
                     {
                         "@type": "ListItem",
                         "position": 2,
                         "name": "Хостинг",
-                        "url": "https://2domains.ru/hosting"
+                        "url": "https://ceo-chi.vercel.app"
                     }
                 ]
             },
@@ -348,9 +330,9 @@
 <body>
     <div class="breadcrumbs">
         <ul>
-            <li><a href="https://example.com">Главная</a></li>
-            <li><a href="https://example.com/games">Игры</a></li>
-            <li><a href="https://example.com/games/industrial-simulators">Индустриальные симуляторы</a></li>
+            <li><a href="https://ceo-chi.vercel.app">Главная</a></li>
+            <li><a href="https://ceo-chi.vercel.app">Игры</a></li>
+            <li><a href="https://ceo-chi.vercel.app">Индустриальные симуляторы</a></li>
             <li>Factorio</li>
         </ul>
     </div>
