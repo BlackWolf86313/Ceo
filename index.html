@@ -1,13 +1,15 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Factorio | Индустриальная выживалка&#129302;</title>
-    <meta name="description" content="Краткая википедия о Factorio — игре про автоматизацию, ресурсы и выживание на чужой планете.">
+    <title>Factorio | Главная - Индустриальная выживалка</title>
+    <meta name="description" content="Factorio - игра про автоматизацию, ресурсы и выживание на чужой планете. Гайды, новости, моды и сообщество.">
     <meta name="robots" content="index, follow">
+    
+    <!-- Мета-теги для соцсетей -->
     <meta property="og:title" content="Factorio | Индустриальная выживалка">
-    <meta property="og:description" content="Краткая википедия о Factorio — игре про автоматизацию, ресурсы и выживание на чужой планете.">
+    <meta property="og:description" content="Вся информация об игре Factorio: геймплей, автоматизация, защита базы.">
     <meta property="og:image" content="https://ceo-chi.vercel.app/factorio-wiki.jpg">
     <meta property="og:url" content="https://ceo-chi.vercel.app">
     <meta property="og:type" content="website">
@@ -204,7 +206,7 @@
             line-height: 1.6;
         }
         .container {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
             background-color: #2a2a2a;
             padding: 30px;
@@ -236,6 +238,7 @@
             padding: 20px;
             margin: 20px 0;
             border-left: 4px solid #00cc66;
+            border-radius: 0 8px 8px 0;
         }
         .highlight {
             color: #00cc66;
@@ -256,8 +259,10 @@
         a {
             color: #00cc66;
             text-decoration: none;
+            transition: all 0.3s;
         }
         a:hover {
+            color: #ff4444;
             text-decoration: underline;
         }
         .icon {
@@ -268,36 +273,56 @@
             margin-right: 10px;
             vertical-align: middle;
         }
-        /* Стили для хлебных крошек */
-        .breadcrumbs {
-            background-color: #2a2a2a;
-            padding: 10px 20px;
-            margin-bottom: 20px;
-            border-radius: 5px;
-            border: 1px solid #444;
+        
+        /* Хлебные крошки */
+        .breadcrumbs-modern {
+            background: linear-gradient(145deg, #2a2a2a 0%, #1a1a1a 100%);
+            padding: 15px 25px;
+            margin-bottom: 30px;
+            border-radius: 50px;
+            border: 1px solid #00cc66;
+            box-shadow: 0 4px 15px rgba(0, 255, 0, 0.2);
         }
-        .breadcrumbs ul {
+        .breadcrumbs-modern ul {
             display: flex;
+            flex-wrap: wrap;
             list-style: none;
             padding: 0;
             margin: 0;
+            align-items: center;
+            justify-content: center;
         }
-        .breadcrumbs li {
-            margin: 0 5px 0 0;
+        .breadcrumbs-modern li {
+            margin: 5px 10px;
             padding: 0;
+            position: relative;
         }
-        .breadcrumbs li:not(:last-child):after {
+        .breadcrumbs-modern li:not(:last-child)::after {
             content: "›";
-            margin-left: 10px;
+            margin-left: 15px;
             color: #00cc66;
+            font-size: 1.5em;
         }
-        .breadcrumbs a {
+        .breadcrumbs-modern a {
+            color: #e0e0e0;
+            padding: 8px 15px;
+            border-radius: 30px;
+            background-color: rgba(0, 204, 102, 0.1);
+            transition: all 0.3s;
+        }
+        .breadcrumbs-modern a:hover {
+            background-color: #00cc66;
+            color: #1a1a1a;
+            box-shadow: 0 0 20px #00cc66;
+        }
+        .breadcrumbs-modern .active {
             color: #00cc66;
+            padding: 8px 15px;
+            border-radius: 30px;
+            background-color: rgba(0, 204, 102, 0.2);
+            border: 1px solid #00cc66;
+            font-weight: bold;
         }
-        .breadcrumbs a:hover {
-            text-decoration: underline;
-        }
-        /* Стили для FAQ блока */
         .faq-block {
             background-color: #333;
             padding: 20px;
@@ -315,6 +340,31 @@
             padding-bottom: 15px;
             border-bottom: 1px solid #444;
         }
+        hr {
+            border: none;
+            border-top: 2px dashed #444;
+            margin: 30px 0;
+        }
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 30px 0;
+            padding: 20px;
+            background-color: #1a1a1a;
+            border-radius: 50px;
+        }
+        .nav-menu a {
+            padding: 10px 20px;
+            border-radius: 30px;
+            background-color: #2a2a2a;
+            border: 1px solid #00cc66;
+        }
+        .nav-menu a:hover {
+            background-color: #00cc66;
+            color: #1a1a1a;
+        }
     </style>
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -323,21 +373,31 @@
     <link rel="manifest" href="/site.webmanifest" />
 </head>
 <body>
-    <div class="breadcrumbs">
+    <!-- НАВИГАЦИЯ -->
+    <div class="nav-menu">
+        <a href="index.html" class="active">🏠 Главная</a>
+        <a href="about.html">🏭 О компании</a>
+        <a href="contacts.html">📞 Контакты</a>
+        <a href="actions.html">🎉 Акции</a>
+        <a href="news.html">📰 Новости</a>
+        <a href="clients.html">🤝 Клиенты</a>
+    </div>
+
+    <!-- ХЛЕБНЫЕ КРОШКИ -->
+    <div class="breadcrumbs-modern">
         <ul>
-            <li><a href="https://ceo-chi.vercel.app">Главная</a></li>
-            <li><a href="https://ceo-chi.vercel.app">Игры</a></li>
-            <li><a href="https://ceo-chi.vercel.app">Индустриальные симуляторы</a></li>
-            <li>Factorio</li>
+            <li><a href="index.html">🏠 Главная</a></li>
+            <li class="active">⚡ Factorio Wiki</li>
         </ul>
     </div>
     
     <div class="container">
         <div class="factorio-header">
-            <h1><span class="icon"></span> Factorio <span class="icon"></span></h1>
-            <p><em>Индустриальная выживалка на чужой планете</em></p>
+            <h1><span class="icon"></span> Factorio: Промышленный симулятор <span class="icon"></span></h1>
+            <p><em>Автоматизируй всё. Выживай. Развивайся.</em></p>
         </div>
 
+        <!-- ОСНОВНОЙ КОНТЕНТ -->
         <div class="content-block">
             <h2>Что такое Factorio?</h2>
             <p><span class="highlight">Factorio</span> — это игра в жанре симулятора автоматизации и выживания, разработанная студией Wube Software. Игрок оказывается на чужой планете и должен построить автоматизированную промышленную империю, добывая ресурсы, производя предметы и защищаясь от враждебных существ.</p>
@@ -346,69 +406,41 @@
         <div class="content-block">
             <h2>Ключевые особенности</h2>
             <ul>
-                <li><span class="highlight">Автоматизация:</span> Стройте конвейеры, роботов и заводы для автоматического производства.</li>
-                <li><span class="highlight">Исследование технологий:</span> Развивайте науку и открывайте новые технологии для улучшения производства.</li>
-                <li><span class="highlight">Защита базы:</span> Отражайте атаки враждебных существ, строя стены, турели и оборонительные системы.</li>
-                <li><span class="highlight">Мультиплеер:</span> Стройте и автоматизируйте вместе с друзьями в кооперативном режиме.</li>
-                <li><span class="highlight">Моды и модификации:</span> Огромное сообщество создаёт моды, расширяющие геймплей.</li>
+                <li><span class="highlight">Автоматизация:</span> Стройте конвейеры, роботов и заводы.</li>
+                <li><span class="highlight">Исследование технологий:</span> Развивайте науку.</li>
+                <li><span class="highlight">Защита базы:</span> Отражайте атаки битов.</li>
+                <li><span class="highlight">Мультиплеер:</span> Кооператив до 65535 игроков.</li>
+                <li><span class="highlight">Моды:</span> Тысячи модификаций.</li>
             </ul>
         </div>
 
         <div class="content-block">
             <h2>Геймплей</h2>
-            <p>Игрок начинает с базовых инструментов и постепенно развивает производство: от ручной добычи руды до полностью автоматизированного мегазавода. Основные этапы включают:</p>
+            <p>Основные этапы:</p>
             <ul>
                 <li>Добыча ресурсов (железо, медь, уголь, нефть).</li>
                 <li>Производство деталей и сборка машин.</li>
-                <li>Строительство логистической сети (конвейеры, роботы, поезда).</li>
-                <li>Защита от атак местной фауны — битов.</li>
-                <li>Запуск ракеты в космос — финальная цель игры.</li>
+                <li>Строительство логистической сети.</li>
+                <li>Защита от атак местной фауны.</li>
+                <li>Запуск ракеты в космос.</li>
             </ul>
         </div>
 
         <div class="faq-block">
-            <h2>Часто задаваемые вопросы о Factorio</h2>
+            <h2>Часто задаваемые вопросы</h2>
             
             <div class="faq-question">Сколько стоит Factorio?</div>
-            <div class="faq-answer">Factorio стоит $20.00 (около 1500 рублей) на официальном сайте. Игра доступна для покупки на Windows, macOS и Linux.</div>
+            <div class="faq-answer">$20.00 на официальном сайте.</div>
             
-            <div class="faq-question">Можно ли играть в Factorio с модами?</div>
-            <div class="faq-answer">Да, Factorio имеет официальную поддержку модов. Вы можете скачать моды через встроенный менеджер модов в игре или на официальном портале mods.factorio.com.</div>
+            <div class="faq-question">Можно ли играть с модами?</div>
+            <div class="faq-answer">Да, через портал mods.factorio.com.</div>
             
-            <div class="faq-question">Есть ли в Factorio мультиплеер?</div>
-            <div class="faq-answer">Да, Factorio поддерживает кооперативный режим до 65535 игроков на одном сервере. Вы можете играть с друзьями через интернет или локальную сеть.</div>
-            
-            <div class="faq-question">Как защититься от битов в Factorio?</div>
-            <div class="faq-answer">Для защиты от битов используйте турели, стены и автоматические оборонительные системы. Рекомендуется окружить базу стенами и разместить лазерные или пулемётные турели с достаточным боезапасом.</div>
-            
-            <div class="faq-question">Какая цель в Factorio?</div>
-            <div class="faq-answer">Основная цель игры — запустить ракету в космос. Для этого необходимо построить автоматизированный завод, исследовать технологии и наладить производство сложных компонентов.</div>
-        </div>
-
-        <div class="content-block">
-            <h2>Технические детали</h2>
-            <ul>
-                <li><span class="highlight">Платформы:</span> Windows, macOS, Linux</li>
-                <li><span class="highlight">Режимы игры:</span> Одиночная, кооперативная, PvP</li>
-                <li><span class="highlight">Дата выхода:</span> 14 августа 2020 (официальный релиз)</li>
-                <li><span class="highlight">Движок:</span> Собственный движок Wube Software</li>
-                <li><span class="highlight">Язык программирования:</span> C++ (ядро), Lua (моды)</li>
-            </ul>
-        </div>
-
-        <div class="content-block">
-            <h2>Сообщество и моды</h2>
-            <p>Factorio имеет активное сообщество, которое создаёт тысячи модификаций, добавляющих новые технологии, ресурсы, врагов и механики. Официальный портал модов доступен на сайте игры.</p>
-            <p>Ссылки:</p>
-            <ul>
-                <li><a href="https://factorio.com" target="_blank">Официальный сайт</a></li>
-                <li><a href="https://mods.factorio.com" target="_blank">Официальный портал модов</a></li>
-                <li><a href="https://wiki.factorio.com" target="_blank">Официальная вики</a></li>
-            </ul>
+            <div class="faq-question">Есть ли мультиплеер?</div>
+            <div class="faq-answer">Да, кооперативный режим.</div>
         </div>
 
         <div class="footer">
-            <p>© 2023 Краткая википедия о Factorio. Все права на игру принадлежат Wube Software.</p>
+            <p>© 2026 Factorio Wiki. Все права принадлежат Wube Software.</p>
         </div>
     </div>
     

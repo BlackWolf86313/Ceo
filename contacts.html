@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты Factorio Wiki</title>
+    <meta name="description" content="Свяжитесь с нами: адрес, телефон, email, карта проезда.">
+    <style>
+        /* Те же стили */
+        body {
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+            font-family: 'Courier New', monospace;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #2a2a2a;
+            padding: 30px;
+            border: 2px solid #444;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.1);
+        }
+        h1 {
+            color: #00cc66;
+            text-align: center;
+            border-bottom: 1px solid #444;
+            padding-bottom: 10px;
+        }
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 30px 0;
+            padding: 20px;
+            background-color: #1a1a1a;
+            border-radius: 50px;
+        }
+        .nav-menu a {
+            color: #00cc66;
+            padding: 10px 20px;
+            border-radius: 30px;
+            background-color: #2a2a2a;
+            border: 1px solid #00cc66;
+            text-decoration: none;
+        }
+        .nav-menu a:hover {
+            background-color: #00cc66;
+            color: #1a1a1a;
+        }
+        .content-block {
+            background-color: #333;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 4px solid #00cc66;
+            border-radius: 0 8px 8px 0;
+        }
+        .highlight {
+            color: #00cc66;
+            font-weight: bold;
+        }
+        iframe {
+            width: 100%;
+            height: 300px;
+            border: 2px solid #00cc66;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+        }
+        .breadcrumbs-modern {
+            background: linear-gradient(145deg, #2a2a2a 0%, #1a1a1a 100%);
+            padding: 15px 25px;
+            margin-bottom: 30px;
+            border-radius: 50px;
+            border: 1px solid #00cc66;
+        }
+        .breadcrumbs-modern ul {
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            align-items: center;
+            justify-content: center;
+        }
+        .breadcrumbs-modern li {
+            margin: 5px 10px;
+        }
+        .breadcrumbs-modern li:not(:last-child)::after {
+            content: "›";
+            margin-left: 15px;
+            color: #00cc66;
+            font-size: 1.5em;
+        }
+        .breadcrumbs-modern a {
+            color: #e0e0e0;
+            padding: 8px 15px;
+            border-radius: 30px;
+            background-color: rgba(0, 204, 102, 0.1);
+            text-decoration: none;
+        }
+        .breadcrumbs-modern .active {
+            color: #00cc66;
+            padding: 8px 15px;
+            background-color: rgba(0, 204, 102, 0.2);
+            border: 1px solid #00cc66;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-menu">
+        <a href="index.html">🏠 Главная</a>
+        <a href="about.html">🏭 О компании</a>
+        <a href="contacts.html" class="active">📞 Контакты</a>
+        <a href="actions.html">🎉 Акции</a>
+        <a href="news.html">📰 Новости</a>
+        <a href="clients.html">🤝 Клиенты</a>
+    </div>
+
+    <div class="breadcrumbs-modern">
+        <ul>
+            <li><a href="index.html">🏠 Главная</a></li>
+            <li class="active">📞 Контакты</li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <h1>Контакты</h1>
+        
+        <div class="content-block">
+            <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-0.004017949104309083%2C51.47612752641776%2C0.00030577182769775396%2C51.478569861898606&layer=mapnik"></iframe>
+            
+            <p><span class="highlight">Наш адрес:</span> 123 Industrial Avenue, New York, NY 10001, USA</p>
+            <p><span class="highlight">Телефон:</span> +1 (555) 123-4567</p>
+            <p><span class="highlight">Email:</span> info@factorio-wiki.com</p>
+            <p><span class="highlight">Режим работы:</span> Круглосуточно, онлайн</p>
+        </div>
+
+        <div class="footer">
+            <p><a href="index.html">← Вернуться на главную</a></p>
+        </div>
+    </div>
+</body>
+</html>
