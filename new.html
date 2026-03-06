@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorio 🤖 | Новости и клиенты</title>
+    <meta name="description" content="🤖 Свежие новости Factorio и наши клиенты. Обновления, моды, партнёры и достижения.">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Factorio 🤖 | Новости и клиенты">
+    <meta property="og:description" content="🤖 Новости игры и список наших клиентов и партнёров">
+    <meta property="og:image" content="https://ceo-chi.vercel.app/factorio-wiki.jpg">
+    <meta property="og:url" content="https://ceo-chi.vercel.app">
+    <meta property="og:type" content="website">
+
+    <style>
+        /* ========== ОСНОВНЫЕ СТИЛИ ========== */
+        body {
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+            font-family: 'Courier New', monospace;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Контейнер для эмодзи роботов */
+        .robot-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            overflow: hidden;
+        }
+
+        .robot-emoji {
+            position: absolute;
+            font-size: 24px;
+            animation: float 3s ease-in-out forwards;
+            opacity: 0;
+            text-shadow: 0 0 10px #00cc66, 0 0 20px #00cc66;
+            z-index: 10000;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+            20% {
+                opacity: 1;
+            }
+            80% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) rotate(20deg);
+                opacity: 0;
+            }
+        }
+
+        /* Эффект свечения при наведении */
+        body:hover::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(0, 255, 0, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 9998;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.6; }
+        }
+
+        /* Робот-курсор */
+        .robot-cursor {
+            position: fixed;
+            width: 40px;
+            height: 40px;
+            pointer-events: none;
+            z-index: 10001;
+            transform: translate(-50%, -50%);
+            transition: transform 0.1s ease;
+            filter: drop-shadow(0 0 10px #00cc66);
+            display: none;
+        }
+
+        body:hover .robot-cursor {
+            display: block;
+        }
+
+        /* Стили для ссылок */
+        a {
+            color: #00cc66;
+            text-decoration: none;
+            transition: all 0.3s;
+            position: relative;
+            display: inline-block;
+        }
+
+        a:hover {
+            color: #ff4444;
+            transform: scale(1.1);
+            text-shadow: 0 0 10px #ff4444;
+        }
+
+        a:hover::before {
+            content: '🤖';
+            position: absolute;
+            left: -30px;
+            top: -20px;
+            font-size: 20px;
+            animation: bounce 0.5s ease infinite;
+        }
+
+        a:hover::after {
+            content: '⚡';
+            position: absolute;
+            right: -30px;
+            top: -20px;
+            font-size: 20px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Контейнер */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #2a2a2a;
+            padding: 30px;
+            border: 2px solid #444;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.1);
+            position: relative;
+            z-index: 1;
+        }
+
+        h1, h2, h3 {
+            color: #00cc66;
+            border-bottom: 1px solid #444;
+            padding-bottom: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-top: 0;
+        }
+
+        .factorio-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .factorio-header h1 {
+            position: relative;
+            display: inline-block;
+        }
+
+        .factorio-header h1:hover::before {
+            content: '🤖🤖🤖';
+            position: absolute;
+            left: -80px;
+            top: 0;
+            font-size: 30px;
+            animation: slideIn 0.5s ease;
+        }
+
+        .factorio-header h1:hover::after {
+            content: '🤖🤖🤖';
+            position: absolute;
+            right: -80px;
+            top: 0;
+            font-size: 30px;
+            animation: slideIn 0.5s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Стили для контентных блоков */
+        .content-block {
+            background-color: #333;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 4px solid #00cc66;
+            border-radius: 0 8px 8px 0;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .content-block:hover {
+            transform: translateX(10px);
+            box-shadow: -5px 5px 20px rgba(0, 255, 0, 0.3);
+        }
+
+        .content-block:hover::before {
+            content: '🔧';
+            position: absolute;
+            left: -30px;
+            font-size: 24px;
+            animation: wrench 1s ease infinite;
+        }
+
+        @keyframes wrench {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(20deg); }
+            75% { transform: rotate(-20deg); }
+        }
+
+        /* Highlight */
+        .highlight {
+            color: #00cc66;
+            font-weight: bold;
+            position: relative;
+        }
+
+        .highlight:hover {
+            background-color: rgba(0, 255, 0, 0.2);
+            padding: 0 5px;
+            border-radius: 5px;
+        }
+
+        .highlight:hover::before {
+            content: '⚙️';
+            position: absolute;
+            left: -25px;
+            animation: spin 2s linear infinite;
+        }
+
+        /* Списки */
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        li:hover {
+            transform: translateX(10px);
+            color: #00cc66;
+        }
+
+        li:hover::before {
+            content: '🤖';
+            position: absolute;
+            left: -25px;
+            animation: bounce 0.5s ease infinite;
+        }
+
+        /* Хлебные крошки */
+        .breadcrumbs-modern {
+            background: linear-gradient(145deg, #2a2a2a 0%, #1a1a1a 100%);
+            padding: 15px 25px;
+            margin-bottom: 30px;
+            border-radius: 50px;
+            border: 1px solid #00cc66;
+            box-shadow: 0 4px 15px rgba(0, 255, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .breadcrumbs-modern ul {
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .breadcrumbs-modern li {
+            margin: 5px 10px;
+            padding: 0;
+            position: relative;
+            font-size: 1.1em;
+            font-weight: 500;
+        }
+
+        .breadcrumbs-modern li:not(:last-child) {
+            padding-right: 25px;
+        }
+
+        .breadcrumbs-modern li:not(:last-child)::after {
+            content: "›";
+            position: absolute;
+            right: -5px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #00cc66;
+            font-size: 1.5em;
+            font-weight: bold;
+            text-shadow: 0 0 10px #00cc66;
+        }
+
+        .breadcrumbs-modern a {
+            color: #e0e0e0;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 30px;
+            background-color: rgba(0, 204, 102, 0.1);
+            border: 1px solid transparent;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .breadcrumbs-modern a:hover {
+            background-color: #00cc66;
+            color: #1a1a1a;
+            border-color: #00cc66;
+            box-shadow: 0 0 20px #00cc66;
+            transform: translateY(-2px);
+        }
+
+        .breadcrumbs-modern .active {
+            color: #00cc66;
+            padding: 8px 15px;
+            border-radius: 30px;
+            background-color: rgba(0, 204, 102, 0.2);
+            border: 1px solid #00cc66;
+            font-weight: bold;
+            text-shadow: 0 0 10px #00cc66;
+        }
+
+        /* Навигация */
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0 30px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            padding: 10px 20px;
+            background-color: #2a2a2a;
+            border: 1px solid #00cc66;
+            border-radius: 30px;
+            transition: all 0.3s;
+            color: #e0e0e0;
+        }
+
+        .nav-links a:hover {
+            background-color: #00cc66;
+            color: #1a1a1a;
+            transform: scale(1.1);
+        }
+
+        .nav-links a.active {
+            background-color: #00cc66;
+            color: #1a1a1a;
+            border-color: #00cc66;
+            box-shadow: 0 0 20px #00cc66;
+        }
+
+        /* ========== СТИЛИ ДЛЯ НОВОСТЕЙ ========== */
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .news-card {
+            background-color: #1a1a1a;
+            border: 1px solid #444;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .news-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            border-color: #00cc66;
+            box-shadow: 0 15px 40px rgba(0, 204, 102, 0.4);
+        }
+
+        .news-card:hover::before {
+            content: '🤖';
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 28px;
+            animation: spin 3s linear infinite;
+            z-index: 2;
+        }
+
+        .news-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 3px solid #00cc66;
+            transition: all 0.5s;
+        }
+
+        .news-card:hover .news-image {
+            transform: scale(1.05);
+            filter: brightness(1.2) drop-shadow(0 0 15px #00cc66);
+        }
+
+        .news-content {
+            padding: 20px;
+            position: relative;
+        }
+
+        .news-title {
+            color: #00cc66;
+            font-size: 1.4em;
+            margin: 0 0 10px 0;
+            border-bottom: none;
+            padding-right: 40px;
+        }
+
+        .news-meta {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            color: #888;
+            font-size: 0.85em;
+        }
+
+        .news-date {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .news-date::before {
+            content: '📅';
+        }
+
+        .news-author {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .news-author::before {
+            content: '✍️';
+        }
+
+        .news-description {
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .news-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+
+        .news-tag {
+            background-color: rgba(0, 204, 102, 0.1);
+            color: #00cc66;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            border: 1px solid #00cc66;
+            transition: all 0.3s;
+        }
+
+        .news-tag:hover {
+            background-color: #00cc66;
+            color: #1a1a1a;
+            transform: scale(1.1);
+        }
+
+        .news-stats {
+            display: flex;
+            gap: 20px;
+            color: #888;
+            font-size: 0.85em;
+            border-top: 1px solid #333;
+            padding-top: 15px;
+            margin-top: 15px;
+        }
+
+        .news-stats span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .news-stats span:nth-child(1)::before {
+            content: '👁️';
+        }
+
+        .news-stats span:nth-child(2)::before {
+            content: '💬';
+        }
+
+        .news-stats span:nth-child(3)::before {
+            content: '❤️';
+        }
+
+        .news-full {
+            display: none;
+            background-color: #2a2a2a;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            border: 2px solid #00cc66;
+        }
+
+        .news-full.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .read-more-btn {
+            background-color: transparent;
+            border: 1px solid #00cc66;
+            color: #00cc66;
+            padding: 8px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 0.9em;
+            transition: all 0.3s;
+            width: 100%;
+        }
+
+        .read-more-btn:hover {
+            background-color: #00cc66;
+            color: #1a1a1a;
+            transform: scale(1.02);
+        }
+
+        /* ========== СТИЛИ ДЛЯ КЛИЕНТОВ ========== */
+        .clients-section {
+            margin-top: 50px;
+        }
+
+        .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .client-card {
+            background-color: #1a1a1a;
+            border: 1px solid #444;
+            border-radius: 12px;
+            padding: 25px;
+            transition: all 0.3s;
+            position: relative;
+            text-align: center;
+        }
+
+        .client-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            border-color: #00cc66;
+            box-shadow: 0 15px 40px rgba(0, 204, 102, 0.4);
+        }
+
+        .client-card:hover::before {
+            content: '🤝';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 30px;
+            animation: bounce 0.5s ease infinite;
+            background-color: #1a1a1a;
+            padding: 5px 15px;
+            border-radius: 20px;
+            border: 1px solid #00cc66;
+        }
+
+        .client-logo {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+            background-color: #2a2a2a;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            border: 2px solid #00cc66;
+            transition: all 0.3s;
+        }
+
+        .client-card:hover .client-logo {
+            transform: rotate(360deg);
+            box-shadow: 0 0 30px #00cc66;
+        }
+
+        .client-name {
+            color: #00cc66;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+            border-bottom: none;
+        }
+
+        .client-category {
+            color: #888;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+            display: inline-block;
+            padding: 3px 15px;
+            background-color: #2a2a2a;
+            border-radius: 20px;
+            border: 1px solid #444;
+        }
+
+        .client-description {
+            margin-bottom: 20px;
+            font-size: 0.95em;
+        }
+
+        .client-stats {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            color: #888;
+            font-size: 0.85em;
+            border-top: 1px solid #333;
+            padding-top: 15px;
+        }
+
+        .client-stats span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .client-stats span:nth-child(1)::before {
+            content: '⭐';
+        }
+
+        .client-stats span:nth-child(2)::before {
+            content: '📅';
+        }
+
+        .client-link {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 8px 25px;
+            background-color: transparent;
+            border: 1px solid #00cc66;
+            border-radius: 25px;
+            color: #00cc66;
+            transition: all 0.3s;
+        }
+
+        .client-link:hover {
+            background-color: #00cc66;
+            color: #1a1a1a;
+        }
+
+        /* Фильтры для клиентов */
+        .client-filters {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background-color: #2a2a2a;
+            border: 1px solid #444;
+            color: #e0e0e0;
+            padding: 8px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: inherit;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background-color: #00cc66;
+            color: #1a1a1a;
+            border-color: #00cc66;
+            transform: scale(1.05);
+        }
+
+        /* Поиск */
+        .search-box {
+            background-color: #2a2a2a;
+            border: 1px solid #444;
+            color: #e0e0e0;
+            padding: 12px 20px;
+            border-radius: 30px;
+            width: 100%;
+            max-width: 400px;
+            margin: 20px auto;
+            display: block;
+            font-family: inherit;
+            font-size: 1em;
+        }
+
+        .search-box:focus {
+            outline: none;
+            border-color: #00cc66;
+            box-shadow: 0 0 20px rgba(0, 204, 102, 0.3);
+        }
+
+        /* Пагинация */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+
+        .page-btn {
+            background-color: #2a2a2a;
+            border: 1px solid #444;
+            color: #e0e0e0;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .page-btn:hover,
+        .page-btn.active {
+            background-color: #00cc66;
+            color: #1a1a1a;
+            border-color: #00cc66;
+            transform: scale(1.1);
+        }
+
+        /* Футер */
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #888;
+            font-size: 0.9em;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+        }
+
+        /* Анимации */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .news-card, .client-card {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+    </style>
+</head>
+<body>
+    <!-- Контейнер для эмодзи роботов -->
+    <div class="robot-container" id="robotContainer"></div>
+    
+    <!-- Робот-курсор -->
+    <div class="robot-cursor" id="robotCursor">🤖</div>
+
+    <!-- ХЛЕБНЫЕ КРОШКИ -->
+    <div class="breadcrumbs-modern">
+        <ul>
+            <li><a href="index.html">🏠 Главная</a></li>
+            <li><a href="news.html" class="active">📰 Новости</a></li>
+            <li><a href="clients.html">🤝 Клиенты</a></li>
+        </ul>
+    </div>
+    
+    <div class="container">
+        <div class="factorio-header">
+            <h1>📰 Новости и 🤝 Клиенты Factorio</h1>
+            <p><em>🤖 Свежие новости и наши партнёры ⚙️</em></p>
+        </div>
+
+        <!-- Навигация -->
+        <div class="nav-links">
+            <a href="index.html">🏠 Главная</a>
+            <a href="about.html">🏭 О компании</a>
+            <a href="contacts.html">📞 Контакты</a>
+            <a href="actions.html">🎉 Акции</a>
+            <a href="news.html" class="active">📰 Новости</a>
+            <a href="clients.html">🤝 Клиенты</a>
+        </div>
+
+        <!-- ========== БЛОК НОВОСТЕЙ ========== -->
+        <div class="content-block" id="news">
+            <h2>📰 Последние новости</h2>
+            
+            <!-- Поиск по новостям -->
+            <input type="text" class="search-box" id="newsSearch" placeholder="🔍 Поиск по новостям...">
+
+            <!-- Сетка новостей -->
+            <div class="news-grid" id="newsGrid">
+                <!-- Новость 1 -->
+                <div class="news-card" data-id="1">
+                    <img src="https://via.placeholder.com/400x200/1a1a1a/00cc66?text=Factorio+Friday+Facts+🤖" alt="Friday Facts" class="news-image">
+                    <div class="news-content">
+                        <h3 class="news-title">Factorio Friday Facts #420</h3>
+                        <div class="news-meta">
+                            <span class="news-date">16 января 2026</span>
+                            <span class="news-author">Wube Team</span>
+                        </div>
+                        <p class="news-description">Новая система оптимизации графики, +30% FPS на больших заводах. Переработана система отрисовки конвейеров.</p>
+                        <div class="news-tags">
+                            <span class="news-tag">#оптимизация</span>
+                            <span class="news-tag">#графика</span>
+                            <span class="news-tag">#производительность</span>
+                        </div>
+                        <div class="news-stats">
+                            <span>1.2K</span>
+                            <span>45</span>
+                            <span>89</span>
+                        </div>
+                        <button class="read-more-btn" onclick="toggleNews(1)">Читать далее 🤖</button>
+                        <div class="news-full" id="news-full-1">
+                            <h4>Подробности обновления:</h4>
+                            <p>Разработчики полностью переписали систему рендеринга, что позволило увеличить производительность на сложных заводах. Теперь конвейеры отрисовываются более эффективно, добавлена поддержка новых видеокарт. В следующем обновлении планируется улучшить систему освещения.</p>
+                            <p>🤖 Роботы теперь работают быстрее и потребляют меньше энергии!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Новость 2 -->
+                <div class="news-card" data-id="2">
+                    <img src="https://via.placeholder.com/400x200/1a1a1a/00cc66?text=Space+Age+Update+🤖" alt="Space Age" class="news-image">
+                    <div class="news-content">
+                        <h3 class="news-title">Релиз дополнения Space Age</h3>
+                        <div class="news-meta">
+                            <span class="news-date">10 января 2026</span>
+                            <span class="news-author">Wube Software</span>
+                        </div>
+                        <p class="news-description">Масштабное дополнение добавляет космические платформы, новые планеты и межпланетную логистику.</p>
+                        <div class="news-tags">
+                            <span class="news-tag">#SpaceAge</span>
+                            <span class="news-tag">#дополнение</span>
+                            <span class="news-tag">#космос</span>
+                        </div>
+                        <div class="news-stats">
+                            <span>3.5K</span>
+                            <span>128</span>
+                            <span>256</span>
+                        </div>
+                        <button class="read-more-btn" onclick="toggleNews(2)">Читать далее 🚀</button>
+                        <div class="news-full" id="news-full-2">
+                            <h4>Что нового:</h4>
+                            <ul>
+                                <li>🚀 Космические платформы для межпланетных перевозок</li>
+                                <li>🪐 3 новые планеты с уникальными ресурсами</li>
+                                <li>🤖 Новые типы роботов для работы в космосе</li>
+                                <li>📡 Межпланетная логистическая сеть</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Новость 3 -->
+                <div class="news-card" data-id="3">
+                    <img src="https://via.placeholder.com/400x200/1a1a1a/00cc66?text=Mod+Portal+Update+🤖" alt="Mod Portal" class="news-image">
+                    <div class="news-content">
+                        <h3 class="news-title">Обновление портала модов</h3>
+                        <div class="news-meta">
+                            <span class="news-date">5 января 2026</span>
+                            <span class="news-author">Community Team</span>
+                        </div>
+                        <p class="news-description">Новые фильтры поиска, система рекомендаций и улучшенная совместимость с Space Age.</p>
+                        <div class="news-tags">
+                            <span class="news-tag">#моды</span>
+                            <span class="news-tag">#обновление</span>
+                            <span class="news-tag">#портал</span>
+                        </div>
+                        <div class="news-stats">
+                            <span>890</span>
+                            <span>34</span>
+                            <span>67</span>
+                        </div>
+                        <button class="read-more-btn" onclick="toggleNews(3)">Читать далее 📦</button>
+                        <div class="news-full" id="news-full-3">
+                            <h4>Новые возможности:</h4>
+                            <ul>
+                                <li>🔍 Фильтр по совместимости с версией игры</li>
+                                <li>⭐ Система рекомендаций на основе ваших модов</li>
+                                <li>📊 Статистика загрузок в реальном времени</li>
+                                <li>🤖 Автоматическая проверка обновлений</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Новость 4 -->
+                <div class="news-card" data-id="4">
+                    <img src="https://via.placeholder.com/400x200/1a1a1a/00cc66?text=Robot+AI+Update+🤖" alt="Robot AI" class="news-image">
+                    <div class="news-content">
+                        <h3 class="news-title">Улучшение AI роботов</h3>
+                        <div class="news-meta">
+                            <span class="news-date">1 января 2026</span>
+                            <span class="news-author">AI Team</span>
+                        </div>
+                        <p class="news-description">Искусственный интеллект логистических роботов стал умнее. Оптимизированы маршруты и распределение задач.</p>
+                        <div class="news-tags">
+                            <span class="news-tag">#роботы</span>
+                            <span class="news-tag">#AI</span>
+                            <span class="news-tag">#логистика</span>
+                        </div>
+                        <div class="news-stats">
+                            <span>2.1K</span>
+                            <span>78</span>
+                            <span>145</span>
+                        </div>
+                        <button class="read-more-btn" onclick="toggleNews(4)">Читать далее 🤖</button>
+                        <div class="news-full" id="news-full-4">
+                            <h4>Улучшения AI:</h4>
+                            <ul>
+                                <li>🧠 Роботы теперь выбирают оптимальные маршруты</li>
+                                <li>⚡ Уменьшено время простоя на 25%</li>
+                                <li>🔋 Эффективнее используют зарядные станции</li>
+                                <li>🤖 Новый тип: исследовательские роботы</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Новость 5 -->
+                <div class="news-card" data-id="5">
+                    <img src="https://via.placeholder.com/400x200/1a1a1a/00cc66?text=Community+Event+🤖" alt="Community Event" class="news-image">
+                    <div class="news-content">
+                        <h3 class="news-title">Конкурс на лучший завод</h3>
+                        <div class="news-meta">
+                            <span class="news-date">28 декабря 2025</span>
+                            <span class="news-author">Community</span>
+                        </div>
+                        <p class="news-description">Сообщество проводит конкурс на самый эффективный и красивый завод. Призы от разработчиков!</p>
+                        <div class="news-tags">
+                            <span class="news-tag">#конкурс</span>
+                            <span class="news-tag">#событие</span>
+                            <span class="news-tag">#сообщество</span>
+                        </div>
+                        <div class="news-stats">
+                            <span>567</span>
+                            <span>23</span>
+                            <span>98</span>
+                        </div>
+                        <button class="read-more-btn" onclick="toggleNews(5)">Читать далее 🏆</button>
+                        <div class="news-full" id="news-full-5">
+                            <h4>Условия конкурса:</h4>
+                            <ul>
+                                <li>🏭 Постройте завод мощностью от 1000 SPM</li>
+                                <li>📸 Сделайте скриншоты и видео</li>
+                                <li>🤖 Используйте роботов для логистики</li>
+                                <li>🎁 Призы: ключи Factorio, мерч, подписки</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Новость 6 -->
+                <div class="news-card" data-id="6">
+                    <img src="https://via.placeholder.com/400x200/1a1a1a/00cc66?text=Factorio+2.0+🤖" alt="Factorio 2.0" class="news-image">
+                    <div class="news-content">
+                        <h3 class="news-title">Анонс Factorio 2.0</h3>
+                        <div class="news-meta">
+                            <span class="news-date">20 декабря 2025</span>
+                            <span class="news-author">Wube Software</span>
+                        </div>
+                        <p class="news-description">Разработчики подтвердили работу над Factorio 2.0. Новая версия получит улучшенную графику и физику.</p>
+                        <div class="news-tags">
+                            <span class="news-tag">#Factorio2</span>
+                            <span class="news-tag">#
