@@ -3,4 +3,4 @@
 User-agent: *
 Allow: /
 Sitemap: http://www.sitemaps.org/schemas/sitemap/0.9
-Host: https://ceo-nz7f.vercel.app/index.html
+Host: https://ceo-nz7f.vercel.app
