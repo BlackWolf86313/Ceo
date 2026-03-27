@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://ceo-chi.vercel.app/sitemap.xml
-Host: https://ceo-chi.vercel.app
+Sitemap: https://ceo-nz7f.vercel.app/sitemap.xml
+Host: https://ceo-nz7f.vercel.app
