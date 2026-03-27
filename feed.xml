@@ -1,57 +1,57 @@
-    <?xml version="1.0"coding="UTF-8"?>
-    <rss version="2.0"> 
-    <channel>
-    <!-- Информация о канале —>
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"> 
+<channel>
+    <!-- Информация о канале -->
     <title>Factorio.Wiki</title>
     <link>https://ceo-nz7f.vercel.app/</link> 
-    <description>Википедия по Factorio от студента(начинающего программиста)</description>
+    <description>Википедия по Factorio от студента (начинающего программиста)</description>
     <language>ru</language> 
-    <lastBuildDate>Sat, 13 March 2026 10:30:00 +0300</lastBuildDate>
+    <lastBuildDate>Sat, 27 March 2026 10:30:00 +0300</lastBuildDate>
 
-    <!-- пост 1 —>
+    <!-- пост 1 -->
     <item>
-    <title>Factorio.Wiki</title>
-    <link>https://ceo-nz7f.vercel.app/index.html/</link> 
-    <description>Описание Factorio</description>
-    <pubDate>Sat, 13 March 2026 10:46:00 +0300</pubDate>
-    <guid>https://ceo-nz7f.vercel.app/index.html/</guid>
+        <title>Factorio.Wiki</title>
+        <link>https://ceo-nz7f.vercel.app/</link> 
+        <description>Описание Factorio</description>
+        <pubDate>Sat, 27 March 2026 10:46:00 +0300</pubDate>
+        <guid>https://ceo-nz7f.vercel.app/</guid>
     </item>
 
-    <!-- пост 2 —>
+    <!-- пост 2 -->
     <item>
-    <title>О компании Wube Software</title>
-    <link>https://ceo-nz7f.vercel.app/about.html</link> 
-    <description>Описание компании Wube Software</description>
-    <pubDate>Sat, 13 March 2026 10:46:00 +0300</pubDate>
-    <guid>https://ceo-nz7f.vercel.app/about.html</guid>
+        <title>О компании Wube Software</title>
+        <link>https://ceo-nz7f.vercel.app/about.html</link> 
+        <description>Описание компании Wube Software</description>
+        <pubDate>Sat, 27 March 2026 10:46:00 +0300</pubDate>
+        <guid>https://ceo-nz7f.vercel.app/about.html</guid>
     </item>
 
-    <!-- пост 3 —>
+    <!-- пост 3 -->
     <item>
-    <title>Контакты</title>
-    <link>https://ceo-nz7f.vercel.app/contacts.html</link> 
-    <description>Контакты связанные с компанией Wube Software</description>
-    <pubDate>Sat, 13 March 2026 10:46:00 +0300</pubDate>
-    <guid>https://ceo-nz7f.vercel.app/contacts.html</guid>
+        <title>Контакты</title>
+        <link>https://ceo-nz7f.vercel.app/contacts.html</link> 
+        <description>Контакты, связанные с компанией Wube Software</description>
+        <pubDate>Sat, 27 March 2026 10:46:00 +0300</pubDate>
+        <guid>https://ceo-nz7f.vercel.app/contacts.html</guid>
     </item>
 
-    <!-- пост 4 —>
+    <!-- пост 4 -->
     <item>
-    <title>Акции по игре</title>
-    <link>https://ceo-nz7f.vercel.app/actions.html</link> 
-    <description>Описание акций по которым можно купить игру по скидке</description>
-    <pubDate>Sat, 13 March 2026 10:46:00 +0300</pubDate>
-    <guid>https://ceo-nz7f.vercel.app/actions.html</guid>
+        <title>Акции по игре</title>
+        <link>https://ceo-nz7f.vercel.app/actions.html</link> 
+        <description>Описание акций, по которым можно купить игру со скидкой</description>
+        <pubDate>Sat, 27 March 2026 10:46:00 +0300</pubDate>
+        <guid>https://ceo-nz7f.vercel.app/actions.html</guid>
     </item>
 
-    <!-- пост 5 —>
+    <!-- пост 5 -->
     <item>
-    <title>Новости о Factorio</title>
-    <link>https://ceo-nz7f.vercel.app/news.html/</link> 
-    <description>Новости по игре Factorio</description>
-    <pubDate>Sat, 13 March 2026 10:46:00 +0300</pubDate>
-    <guid>https://ceo-nz7f.vercel.app/news.html</guid>
+        <title>Новости о Factorio</title>
+        <link>https://ceo-nz7f.vercel.app/news.html</link> 
+        <description>Новости по игре Factorio</description>
+        <pubDate>Sat, 27 March 2026 10:46:00 +0300</pubDate>
+        <guid>https://ceo-nz7f.vercel.app/news.html</guid>
     </item>
 
-    </channel>
-    </rSs>
+</channel>
+</rss>
