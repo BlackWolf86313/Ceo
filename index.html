@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <!-- Favicon -->
-<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="shortcut icon" href="/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-<link rel="manifest" href="/site.webmanifest" />
-<meta name="theme-color" content="#00cc66" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Factorio | Главная - Индустриальная выживалка 🤖</title>
     <meta name="description" content="Factorio - игра про автоматизацию, ресурсы и выживание на чужой планете. Гайды, новости, моды и сообщество.">
     <meta name="robots" content="index, follow">
     
-    <!-- ⚠️ КАНОНИЧЕСКАЯ ССЫЛКА - ГЛАВНОЕ ДЛЯ ИСПРАВЛЕНИЯ ДУБЛИРОВАНИЯ ⚠️ -->
-   <link rel="canonical" href="https://ceo-nz7f.vercel.app/">
-<meta property="og:url" content="https://ceo-nz7f.vercel.app/">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#00cc66" />
     
-    <!-- Yandex.Metrika counter -->
+    <!-- Каноническая ссылка -->
+    <link rel="canonical" href="https://ceo-nz7f.vercel.app/">
+    
+    <!-- Yandex.Metrika counter (только скрипт) -->
     <script type="text/javascript">
         (function(m,e,t,r,i,k,a){
             m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -36,6 +36,7 @@
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-NC7TV8QW');</script>
+    <!-- End Google Tag Manager -->
     
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LS0RNRP72B"></script>
@@ -51,11 +52,17 @@
     <!-- Open Graph -->
     <meta property="og:title" content="Factorio | Индустриальная выживалка">
     <meta property="og:description" content="Вся информация об игре Factorio: геймплей, автоматизация, защита базы.">
-    <meta property="og:image" content="https://ceo-chi.vercel.app/factorio-wiki.jpg">
-    <meta property="og:url" content="https://ceo-chi.vercel.app/">
+    <meta property="og:image" content="https://ceo-nz7f.vercel.app/factorio-wiki.jpg">
+    <meta property="og:url" content="https://ceo-nz7f.vercel.app/">
     <meta property="og:type" content="website">
     
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
             background-color: #1a1a1a;
             color: #e0e0e0;
@@ -64,6 +71,7 @@
             padding: 20px;
             line-height: 1.6;
         }
+        
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -73,20 +81,24 @@
             border-radius: 8px;
             box-shadow: 0 0 20px rgba(0, 255, 0, 0.1);
         }
+        
         h1, h2, h3 {
             color: #00cc66;
             border-bottom: 1px solid #444;
             padding-bottom: 10px;
         }
+        
         h1 {
             text-align: center;
             font-size: 2.5em;
             margin-top: 0;
         }
+        
         .factorio-header {
             text-align: center;
             margin-bottom: 30px;
         }
+        
         .content-block {
             background-color: #333;
             padding: 20px;
@@ -94,31 +106,40 @@
             border-left: 4px solid #00cc66;
             border-radius: 0 8px 8px 0;
         }
+        
         .highlight {
             color: #00cc66;
             font-weight: bold;
         }
+        
         ul {
             padding-left: 20px;
         }
+        
         li {
             margin-bottom: 10px;
         }
+        
         .footer {
             text-align: center;
             margin-top: 40px;
             color: #888;
             font-size: 0.9em;
+            padding-top: 20px;
+            border-top: 1px solid #444;
         }
+        
         a {
             color: #00cc66;
             text-decoration: none;
             transition: all 0.3s;
         }
+        
         a:hover {
             color: #ff4444;
             text-decoration: underline;
         }
+        
         .breadcrumbs-modern {
             background: linear-gradient(145deg, #2a2a2a 0%, #1a1a1a 100%);
             padding: 15px 25px;
@@ -127,6 +148,7 @@
             border: 1px solid #00cc66;
             box-shadow: 0 4px 15px rgba(0, 255, 0, 0.2);
         }
+        
         .breadcrumbs-modern ul {
             display: flex;
             flex-wrap: wrap;
@@ -136,17 +158,20 @@
             align-items: center;
             justify-content: center;
         }
+        
         .breadcrumbs-modern li {
             margin: 5px 10px;
             padding: 0;
             position: relative;
         }
+        
         .breadcrumbs-modern li:not(:last-child)::after {
             content: "›";
             margin-left: 15px;
             color: #00cc66;
             font-size: 1.5em;
         }
+        
         .breadcrumbs-modern a {
             color: #e0e0e0;
             padding: 8px 15px;
@@ -154,11 +179,13 @@
             background-color: rgba(0, 204, 102, 0.1);
             transition: all 0.3s;
         }
+        
         .breadcrumbs-modern a:hover {
             background-color: #00cc66;
             color: #1a1a1a;
             box-shadow: 0 0 20px #00cc66;
         }
+        
         .breadcrumbs-modern .active {
             color: #00cc66;
             padding: 8px 15px;
@@ -167,23 +194,27 @@
             border: 1px solid #00cc66;
             font-weight: bold;
         }
+        
         .faq-block {
             background-color: #333;
             padding: 20px;
             margin: 20px 0;
             border-left: 4px solid #00cc66;
         }
+        
         .faq-question {
             color: #00cc66;
             font-weight: bold;
             margin-bottom: 5px;
         }
+        
         .faq-answer {
             margin-left: 20px;
             margin-bottom: 20px;
             padding-bottom: 15px;
             border-bottom: 1px solid #444;
         }
+        
         .nav-menu {
             display: flex;
             justify-content: center;
@@ -194,6 +225,7 @@
             background-color: #1a1a1a;
             border-radius: 50px;
         }
+        
         .nav-menu a {
             padding: 10px 20px;
             border-radius: 30px;
@@ -201,27 +233,24 @@
             border: 1px solid #00cc66;
             text-decoration: none;
             color: #e0e0e0;
+            transition: all 0.3s;
         }
+        
         .nav-menu a:hover, .nav-menu a.active {
             background-color: #00cc66;
             color: #1a1a1a;
+            transform: scale(1.05);
         }
     </style>
-    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="shortcut icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="manifest" href="/site.webmanifest" />
 </head>
 <body>
     <!-- Yandex.Metrika noscript -->
     <noscript><div><img src="https://mc.yandex.ru/watch/107649643" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NC7TV8QW"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NC7TV8QW" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
-    <!-- НАВИГАЦИЯ - ссылки без index.html -->
+    <!-- Навигация -->
     <div class="nav-menu">
         <a href="/" class="active">🏠 Главная</a>
         <a href="/about.html">🏭 О компании</a>
@@ -230,7 +259,7 @@
         <a href="/news.html">📰 Новости</a>
     </div>
 
-    <!-- ХЛЕБНЫЕ КРОШКИ -->
+    <!-- Хлебные крошки -->
     <div class="breadcrumbs-modern">
         <ul>
             <li><a href="/">🏠 Главная</a></li>
